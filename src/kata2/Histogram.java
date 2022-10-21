@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package kata2;
 
 import java.util.HashMap;
@@ -10,13 +7,14 @@ import java.util.HashMap;
  *
  * @author airam
  */
-public class Histogram {
+ public class Histogram<T> {
     
-    private final int[] data;
+    
+    private final T[] data;
 
     
     
-    public Histogram(int[] data) {
+    public Histogram(T[] data) {
         
         this.data = data;
         
@@ -24,7 +22,7 @@ public class Histogram {
     
     
     
-    public int[] getData() {
+    public T[] getData() {
         return data;
     }
     
@@ -34,10 +32,12 @@ public class Histogram {
     public HashMap<Integer, Integer> getHistogram() {
         HashMap<Integer, Integer> histogram = new HashMap<Integer, Integer>();
         
-        for (int key : data) {
-            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
+        for (T key : data) {
+            histogram.put((Integer)key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
          
         return histogram;
     }
+
+   
 }
